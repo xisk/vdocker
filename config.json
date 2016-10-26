@@ -1,73 +1,106 @@
-
 {
-    "log": {
-        "loglevel": "none"
-    },
-    "inbound": {
-        "port": 10000,
-        "protocol": "vmess",
-        "settings": {
-            "clients": [
-                {
-                    "id": "b10fb5e0-9b11-11e6-9f33-a24fc0d9649c",
-                    "level": 1,
-                    "alterId": 64
-                }
-            ]
-        },
-        "streamSettings": {
-             "network": "tcp"
-           }
-    },
-    "inboundDetour": [
-    ],
-    "outbound": {
-        "protocol": "freedom",
-        "settings": {}
-    },
-    "outboundDetour": [
+  "log": {
+    "access": "",
+    "loglevel": "info"
+  },
+  "inbound": {
+    "protocol": "vmess",
+    "port": 5113,
+    "settings": {
+      "clients": [
         {
-            "protocol": "blackhole",
-            "settings": {},
-            "tag": "blocked"
+          "id": "c9418176-437b-4bc2-a76e-4d892a5599c5",
+          "level": 1,
+          "alterId": 31
         }
-    ],
-    "routing": {
-        "strategy": "rules",
-        "settings": {
-            "rules": [
-                {
-                    "type": "field",
-                    "ip": [
-                        "0.0.0.0/8",
-                        "10.0.0.0/8",
-                        "100.64.0.0/10",
-                        "127.0.0.0/8",
-                        "169.254.0.0/16",
-                        "172.16.0.0/12",
-                        "192.0.0.0/24",
-                        "192.0.2.0/24",
-                        "192.168.0.0/16",
-                        "198.18.0.0/15",
-                        "198.51.100.0/24",
-                        "203.0.113.0/24",
-                        "::1/128",
-                        "fc00::/7",
-                        "fe80::/10"
-                    ],
-                    "outboundTag": "blocked"
-                }
-            ]
-        }
+      ]
     },
-    "transport": {
-        "kcpSettings": {
-            "uplinkCapacity": 8,
-            "downlinkCapacity": 100,
-            "congestion": true,
-            "header": {
-                "type": "none"
-            }
-        }
+    "streamSettings": {
+      "network": "kcp"
     }
+  },
+  "inboundDetour": [
+    {
+      "protocol": "vmess",
+      "port": 5114,
+      "settings": {
+        "clients": [
+          {
+            "id": "c9418176-437b-4bc2-a76e-4d892a5599c5",
+            "level": 1,
+            "alterId": 31
+          }
+        ]
+      }
+    }
+  ],
+  "outbound": {
+    "protocol": "freedom",
+    "settings": {}
+  },
+  "outboundDetour": [
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "blocked"
+    }
+  ],
+  "routing": {
+    "strategy": "rules",
+    "settings": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "domain": [
+            "360.cn",
+            "pos.baidu.com",
+            "static.blog.csdn.net",
+            "wn.x.jd.com",
+            "static.360buyimg.com",
+            "match.p4p.1688.com",
+            "nsclick.baidu.com",
+            "baidustatic.com",
+            "libs.baidu.com",
+            "eclick.baidu.com",
+            "cnzz.com",
+            "libs.baidu.com",
+            "msg.71.am",
+            "zhihu-web-analytics.zhihu.com",
+            "google-analytics.com",
+            "simba.taobao.com",
+            "googleadservices.com",
+            "analytics.meituan.com",
+            "googleads.g.doubleclick.net",
+            "strip.taobaocdn.com",
+            "googlesyndication.com",
+            "medialytics.com",
+            "googlesyndication.com",
+            "lianmeng.360.cn",
+            "tanx.com"
+          ],
+          "outboundTag": "blocked"
+        }
+      ]
+    }
+  },
+  "transport": {
+    "tcpSettings": {
+      "connectionReuse": true
+    },
+    "kcpSettings": {
+      "mtu": 1350,
+      "tti": 20,
+      "uplinkCapacity": 8,
+      "downlinkCapacity": 100,
+      "congestion": true,
+      "header": {
+        "type": "srtp"
+      }
+    }
+  }
 }
