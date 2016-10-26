@@ -19,7 +19,7 @@
     "inboundDetour": [
         {
             "protocol": "vmess",
-            "port": 10010,
+            "port": 10000,
             "settings": {
               "clients": [
                 {
