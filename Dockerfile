@@ -16,4 +16,5 @@ RUN curl -L -s https://raw.githubusercontent.com/v2ray/v2ray-core/master/release
 RUN rm -f /etc/v2ray/config.json
 ADD config.json /etc/v2ray/config.json
 
-ENTRYPOINT ["/usr/bin/v2ray/v2ray", "--config", "/etc/v2ray/config.json"]
+#ENTRYPOINT ["/usr/bin/v2ray/v2ray", "--config", "/etc/v2ray/config.json"]
+ENTRYPOINT ["systemctl", "start", "v2ray.service"]
