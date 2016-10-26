@@ -28,10 +28,10 @@
                     "alterId": 64
                 }
               ]
+           },
+           "streamSettings": {
+             "network": "kcp"
            }
-        },
-        "streamSettings": {
-          "network": "kcp"
         }
     ],
     "outbound": {
