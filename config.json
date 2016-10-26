@@ -16,7 +16,7 @@
             ]
         },
         "streamSettings": {
-             "network": "kcp"
+             "network": "tcp"
            }
     },
     "inboundDetour": [
