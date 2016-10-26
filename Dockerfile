@@ -1,5 +1,5 @@
 FROM ubuntu
-#MAINTAINER "xisk" <xisk@xisk.com>
+MAINTAINER "xisk" <xisk@xisk.com>
 
 # Basic environment setting
 RUN echo "Asia/Shanghai" > /etc/timezone
