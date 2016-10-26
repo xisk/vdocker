@@ -2,7 +2,8 @@ FROM ubuntu
 MAINTAINER "xisk" <xisk@xisk.com>
 
 # Basic environment setting
-RUN echo "Asia/Shanghai" > /etc/timezone
+#RUN echo "Asia/Shanghai" > /etc/timezone
+RUN echo "Europe/London" > /etc/timezone
 RUN apt update -qq \
     && apt upgrade -y -qq \
     && apt install git curl unzip wget -y -q
