@@ -4,7 +4,7 @@
         "loglevel": "none"
     },
     "inbound": {
-        "port": 10010,
+        "port": 10000,
         "protocol": "vmess",
         "settings": {
             "clients": [
