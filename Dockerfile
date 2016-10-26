@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM Debian
 MAINTAINER "xisk" <xisk@xisk.com>
 
 # Basic environment setting
