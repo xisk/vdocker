@@ -10,9 +10,6 @@ RUN apt update -qq \
 # Port for v2ray
 EXPOSE 10010
 
-# Port for ShadowSocks
-EXPOSE 10086
-
 # Setup V2Ray
 RUN curl -L -s https://raw.githubusercontent.com/v2ray/v2ray-core/master/release/install-release.sh | bash
 RUN mv /etc/v2ray/config.json /etc/v2ray/config.json.bak
