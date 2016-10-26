@@ -1,7 +1,6 @@
 FROM debian:jessie
-#MAINTAINER "xisk" <xisk@xisk.com>
 
-# Basic environment setting
+
 RUN echo "Asia/Shanghai" > /etc/timezone
 RUN apt update -qq \
     && apt upgrade -y -qq \
@@ -17,4 +16,3 @@ RUN rm -f /etc/v2ray/config.json
 ADD config.json /etc/v2ray/config.json
 
 ENTRYPOINT ["/usr/bin/v2ray/v2ray", "--config", "/etc/v2ray/config.json"]
-#ENTRYPOINT ["systemctl", "start", "v2ray.service"]
