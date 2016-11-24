@@ -32,6 +32,14 @@
           }
         ]
       }
+    },
+    {
+      "protocol": "shadowsocks",
+      "port": 5115,
+      "settings": {
+        "method": "aes-256-cfb",
+        "password":"aes312894"
+      }
     }
   ],
   "outbound": {
@@ -95,7 +103,7 @@
     "kcpSettings": {
       "mtu": 1350,
       "tti": 20,
-      "uplinkCapacity": 8,
+      "uplinkCapacity": 10,
       "downlinkCapacity": 100,
       "congestion": true,
       "header": {
