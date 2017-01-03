@@ -5,7 +5,7 @@ RUN echo "Asia/Shanghai" > /etc/timezone
 #    && apt upgrade -y -qq \
 #    && apt install git curl unzip wget -y -q
 RUN apk add --update \ 
-    unzip
+    unzip \
     curl
     
 # Port for v2ray
