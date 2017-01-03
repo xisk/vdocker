@@ -6,7 +6,8 @@ RUN echo "Asia/Shanghai" > /etc/timezone
 #    && apt install git curl unzip wget -y -q
 RUN apk add --update \ 
     unzip \
-    curl
+    curl \
+    bash
     
 # Port for v2ray
 EXPOSE 5113
