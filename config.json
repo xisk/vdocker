@@ -5,7 +5,7 @@
   },
   "inbound": {
     "protocol": "vmess",
-    "port": 5113,
+    "port": 5211,
     "settings": {
       "clients": [
         {
@@ -22,7 +22,7 @@
   "inboundDetour": [
     {
       "protocol": "vmess",
-      "port": 5114,
+      "port": 5212,
       "settings": {
         "clients": [
           {
@@ -34,8 +34,36 @@
       }
     },
     {
+      "protocol": "vmess",
+      "port": 5213,
+      "settings": {
+        "clients": [
+          {
+            "id": "721e6fd8-78a3-4eb7-aacc-959a4771493f",
+            "level": 1,
+            "alterId": 64
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {
+          "connectionReuse": true,
+          "header": {
+            "type": "http",
+            "request": {
+              "path": ["/","/index.html","/blog/index.html"],
+              "Host": ["incapsula.com"],
+            },
+            "response": {
+            }
+          }
+        }
+      },
+    },
+    {
       "protocol": "shadowsocks",
-      "port": 5115,
+      "port": 5214,
       "settings": {
         "method": "aes-256-cfb",
         "password":"aes312894"
