@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN echo "Asia/Shanghai" > /etc/timezone
+# RUN echo "Asia/Shanghai" > /etc/timezone
 # RUN apt update -qq \
 #    && apt upgrade -y -qq \
 #    && apt install git curl unzip wget -y -q
