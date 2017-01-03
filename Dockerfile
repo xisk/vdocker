@@ -1,11 +1,12 @@
+FROM alpine:latest
 
-FROM debian:jessie
-
-RUN echo "Asia/Shanghai" > /etc/timezone
-RUN apt update -qq \
-    && apt upgrade -y -qq \
-    && apt install git curl unzip wget -y -q
-
+# RUN apt update -qq \
+#    && apt upgrade -y -qq \
+#    && apt install git curl unzip wget -y -q
+RUN apk upgrade --no-cache && apk add --no-cache unzip curl bash tzdata \
+    && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && echo "Asia/Shanghai" > /etc/timezone
+    
 # Port for v2ray
 EXPOSE 5211
 EXPOSE 5212
