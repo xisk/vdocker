@@ -7,8 +7,10 @@ RUN apt update -qq \
     && apt install git curl unzip wget -y -q
 
 # Port for v2ray
-EXPOSE 5113
-EXPOSE 5114
+EXPOSE 5211
+EXPOSE 5212
+EXPOSE 5213
+EXPOSE 5214
 
 # Setup V2Ray
 RUN curl -L -s https://raw.githubusercontent.com/v2ray/v2ray-core/master/release/install-release.sh | bash
