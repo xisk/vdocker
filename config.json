@@ -53,7 +53,7 @@
             "type": "http",
             "request": {
               "path": ["/","/index.html","/blog/index.html"],
-              "Host": ["incapsula.com"],
+              "Host": ["incapsula.com"]
             },
             "response": {
             }
