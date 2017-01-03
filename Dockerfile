@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.5
 
 # RUN apt update -qq \
 #    && apt upgrade -y -qq \
